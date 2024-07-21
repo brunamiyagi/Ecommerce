@@ -1,0 +1,9 @@
+body header nav {
+  color: #fafafa;
+}
+body header nav input {
+  width: 50%;
+}
+body main .carousel .slide .carousel .inner .chamada {
+  height: 500px;
+}/*# sourceMappingURL=style.css.map */
