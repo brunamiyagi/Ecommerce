@@ -1,9 +1,37 @@
+body a {
+  text-decoration: none;
+  color: #0e0e0e;
+}
+body .bi {
+  color: #fafafa;
+  font-size: 120%;
+}
+body button {
+  border: none;
+}
 body header nav {
   color: #fafafa;
 }
 body header nav input {
-  width: 50%;
+  width: 60%;
 }
-body main .carousel .slide .carousel .inner .chamada {
-  height: 500px;
+body header .offcanvas .offcanvas-start .offcanvas-body .bi .bi-arrow-right-short {
+  color: #0e0e0e;
+}
+body main .section2 .categoria-navegation {
+  justify-content: space-between;
+  display: flex;
+}
+body main .section2 .categoria-navegation .categoria {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+body main .section2 .categoria-navegation .categoria .imagem-categoria {
+  border-radius: 50%;
+  width: 65%;
+}
+body main .produtos .card-img {
+  border-radius: 0;
 }/*# sourceMappingURL=style.css.map */

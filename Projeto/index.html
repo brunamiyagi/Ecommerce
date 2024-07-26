@@ -14,14 +14,15 @@
                     <!-- cria breakpoint de navbar-expand EXPANDIRÁ POR COMPLETO o conteudo -->
                     <nav class="navbar navbar-expand d-flex bg-black"> 
                         <!-- criação de sidebar  -->
-                        <button class="btn btn-outline-light d-md-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+                         <!-- aria label nomeia botão para deixar o site mais acessivel  -->
+                        <button class="btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" aria-label="Menu lateral">
                             <i class="bi bi-list"></i>
                         </button>
                         <div class="container d-flex">
                             <a class="navbar-brand" style="color:#fafafa;">LOGO</a>
                             <div class="search-area">
-                                <input type="search" name="search" id="seach-box" class="search-box p-1 border-0" placeholder="Buscar produto">
-                                <button type="button" class="btn btn-outline-light">
+                                <input type="search" name="search" id="seach-box" class="search-box p-1" placeholder="Buscar produto">
+                                <button type="button" class="btn" aria-label="Buscar">
                                     <i class="bi bi-search"></i>
                                 </button>
                             </div>
@@ -29,9 +30,9 @@
                                 <i class="bi bi-person"></i>
                             </a>
                             <div class="areaCompras">
-                                <a href="#">
+                                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#visualizarCarrinho" aria-controls="offcanvasScrolling" aria-label="Carrinho de compras">
                                     <i class="bi bi-cart"></i>
-                                </a>
+                                </button>
                                 <a href="#">
                                     <i class="bi bi-heart"></i>
                                 </a>
@@ -50,9 +51,9 @@
                         </ul>
                     </nav>
                 </div>
-                <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="scrollSideBar">
+                <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="scrollSideBar">
                     <div class="offcanvas-header d-flex">
-                        <div >
+                        <div>
                             <a class="nav-link d-flex" href="#">
                                 <i class="bi bi-person"></i>
                                 <div class="d-block">
@@ -61,7 +62,7 @@
                                 </div>
                             </a>
                         </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
                     </div>
                     <div class="offcanvas-body">
                         <h5>Categorias</h5>
@@ -73,6 +74,16 @@
                         <a class="nav-link" href="#">Moda Praia <i class="bi bi-arrow-right-short"></i></a>
                     </div>
                 </div>
+                <div class="offcanvas offcanvas-end p-3" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="visualizarCarrinho" aria-labelledby="scrollSideBar">
+                    <div class="offcanvas-header d-flex">
+                        <h3>Meu carrinho</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        
+                    </div>
+                    <button class="btn btn-dark" type="button">Finalizar compra</button>
+                </div>
             </header>
             <main>
                 <div class="container mt-1">
@@ -80,9 +91,9 @@
                     <!-- active representa o item ativo no momento -->
                     <div class="carousel slide" data-bs-ride="carousel" id="bannerPrincipal">
                         <ol class="carousel-indicators">
-                            <button type="button" data-bs-target="#bannerPrincipal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#bannerPrincipal" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#bannerPrincipal" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#bannerPrincipal" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Banner 1"></button>
+                            <button type="button" data-bs-target="#bannerPrincipal" data-bs-slide-to="1" aria-label="Banner 2"></button>
+                            <button type="button" data-bs-target="#bannerPrincipal" data-bs-slide-to="2" aria-label="Banner 3"></button>
                         </ol>
                         <!-- adiciona slide -->
                         <div class="carousel-inner">
@@ -97,11 +108,11 @@
                             </div>
                         </div>
                         <!-- controles do slide do banner principal  -->
-                        <button class="carousel-control-prev" type="button" data-bs-target="#bannerPrincipal" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#bannerPrincipal" data-bs-slide="prev" aria-label="Voltar banner">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#bannerPrincipal" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#bannerPrincipal" data-bs-slide="next" aria-label="Avançar banner">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -109,31 +120,71 @@
                 </div>
 
                 <!-- area de categorização dos produtos  -->
-                <div class="container">
-                    
+                <div class="section2 container mt-5">
+                    <div class="categoria-navegation justify-content-around">
+                        <a href="#" class="text-center">
+                            <span class="categoria">
+                                <img src="img/feminino.jpg" alt="Feminino" class="imagem-categoria">
+                                <span class="categoria-description">Feminino</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="categoria">
+                                <img src="img/masculino.jpg" alt="Masculino" class="imagem-categoria">
+                                <span class="categoria-description">Masculino</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="categoria">
+                                <img src="img/infantil.jpeg" alt="Infantil" class="imagem-categoria">
+                                <span class="categoria-description">Infantil</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="categoria">
+                                <img src="img/plussize.jpg" alt="Plus Size" class="imagem-categoria">
+                                <span class="categoria-description">Plus Size</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="categoria">
+                                <img src="img/jeans.jpg" alt="Jeans" class="imagem-categoria">
+                                <span class="categoria-description">Jeans</span>
+                            </span>
+                        </a>
+                        <a href="#">
+                            <span class="categoria">
+                                <img src="img/calçados1.jpg" alt="Calçados" class="imagem-categoria">
+                                <span class="categoria-description">Calçados</span>
+                            </span>
+                        </a>    
+                    </div>
                 </div>
 
 
 
 
                 <!-- criação de cards de produtos  -->
-                <div class="container mt-5">
-                    <div class="card" style="width: 20%">
+                <div class="produtos container mt-5">
+                    <div class="card border-0" style="width: 20%">
                         <div class="card-body">
                             <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRiTYB5I1_gRN8kRbhOg8cFWWSoLW44h4eghH9_4Plzri8CQaw0BQn06riIlFLxODa5S_pfCD-xTZfwRt1HWmckDen1qbwgvoNv7ltY8i_3XnpoKplrxzQnJ8_bO6iAIEacQlD_X5oX&usqp=CAc" alt="" class="card-img top">
-                            <h5 class="card-title">Calça Wide</h5>
+                            <h5 class="card-title mt-2">Calça Wide</h5>
                             <p class="card-subtitle">Jeans</p>
                             <div class="buy-action" style="display: flex; justify-content: space-between;">
-                                <h5 class="mt-1" style="color: red">256,00</h5>
-                                <button type="button" class="border-1 rounded-1"><i class="bi bi-cart-plus"></i></button>
+                                <span class="mt-1"><strong>R$256,00</strong></span>
+                                <button type="button" class="border-1 rounded-1" aria-label="Carrinho de compras">
+                                    <i class="bi bi-cart-plus" style="color:black"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
-            <footer class="">
+            <footer class="bg-black">
 
             </footer>
+            <script src="dist/index.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         </body>
         </html>
