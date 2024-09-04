@@ -1,9 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 $white: #fafafa;
 $grey-white: #dedede;
 $-grey-black: #212121;
 $black: #0e0e0e;
+$font-family-monospace:  "Montserrat", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
 
-body{
+@mixin breakpoint($grid-breakpoints){
+    @media(max-width(map.get($grid-breakpoints, "sm")))
+}
+
+body{ 
+    @include 
     a{
         text-decoration: none;
         color: $black;
@@ -53,4 +69,10 @@ body{
             }
         } 
         }
+    footer{
+        p,a,strong{
+            color: $white;
+        }
+        
+    }
     }

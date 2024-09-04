@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 body a {
   text-decoration: none;
   color: #0e0e0e;
@@ -34,4 +35,7 @@ body main .section2 .categoria-navegation .categoria .imagem-categoria {
 }
 body main .produtos .card-img {
   border-radius: 0;
+}
+body footer p, body footer a, body footer strong {
+  color: #fafafa;
 }/*# sourceMappingURL=style.css.map */

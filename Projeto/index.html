@@ -18,10 +18,10 @@
                         <button class="btn d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling" aria-label="Menu lateral">
                             <i class="bi bi-list"></i>
                         </button>
-                        <div class="container d-flex">
+                        <div class="container d-flex justify-content-between">
                             <a class="navbar-brand" style="color:#fafafa;">LOGO</a>
-                            <div class="search-area">
-                                <input type="search" name="search" id="seach-box" class="search-box p-1" placeholder="Buscar produto">
+                            <div class="search-area d-flex  w-75">
+                                <input type="search" name="search" id="seach-box" class="search-box p-1" placeholder="Buscar produto" >
                                 <button type="button" class="btn" aria-label="Buscar">
                                     <i class="bi bi-search"></i>
                                 </button>
@@ -29,7 +29,7 @@
                             <a href="#">
                                 <i class="bi bi-person"></i>
                             </a>
-                            <div class="areaCompras">
+                            <div class="areaCompras d-flex align-items-center">
                                 <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#visualizarCarrinho" aria-controls="offcanvasScrolling" aria-label="Carrinho de compras">
                                     <i class="bi bi-cart"></i>
                                 </button>
@@ -52,36 +52,118 @@
                     </nav>
                 </div>
                 <div class="offcanvas offcanvas-start " data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="scrollSideBar">
-                    <div class="offcanvas-header d-flex">
-                        <div>
-                            <a class="nav-link d-flex" href="#">
-                                <i class="bi bi-person"></i>
-                                <div class="d-block">
-                                    <h4>Entre ou cadastre-se</h4>
-                                    <span>Sua conta</span>
+                    <div class="offcanvas-header pb-0">
+                        <div class=" d-flex flex-column-reverse justify-content-between w-100 ">
+                            <a class="nav-link d-flex " href="#">
+                                <i class="bi bi-person" style="color: black; font-size: 2rem; margin-right: 2rem;"></i>
+                                <div class="d-flex flex-column">
+                                    <p class="m-0"><strong>Entre ou cadastre-se</strong></p>
+                                    <p>Sua conta</p>
                                 </div>
                             </a>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
                         </div>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+
                     </div>
-                    <div class="offcanvas-body">
-                        <h5>Categorias</h5>
-                        <a class="nav-link" href="#">Novidades <i class="bi bi-arrow-right-short"></i></a>
-                        <a class="nav-link" href="#">Feminino <i class="bi bi-arrow-right-short"></i></a>
-                        <a class="nav-link" href="#">Masculino <i class="bi bi-arrow-right-short"></i></a>
-                        <a class="nav-link" href="#">Infantil <i class="bi bi-arrow-right-short"></i></a>
-                        <a class="nav-link" href="#">Jeans <i class="bi bi-arrow-right-short"></i></a>
-                        <a class="nav-link" href="#">Moda Praia <i class="bi bi-arrow-right-short"></i></a>
+                    <div class="offcanvas-body pt-0">
+                        <p><strong>Categorias</strong></p>
+                        <a class="nav-link" href="#">
+                            <div class="d-flex justify-content-between">
+                                <p>Novidades </p>
+                                <i class="bi bi-arrow-right-short" style="color: black;"></i>
+                            </div>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="d-flex justify-content-between">
+                                <p>Feminino </p>
+                                <i class="bi bi-arrow-right-short" style="color: black;"></i>
+                            </div>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="d-flex justify-content-between">
+                                <p>Masculino</p> 
+                                <i class="bi bi-arrow-right-short" style="color: black;"></i>
+                            </div>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="d-flex justify-content-between">
+                                <p>Infantil </p>
+                                <i class="bi bi-arrow-right-short" style="color: black;"></i>
+                            </div>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="d-flex justify-content-between">
+                                <p>Jeans</p> 
+                                <i class="bi bi-arrow-right-short" style="color: black;"></i>
+                            </div>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="d-flex justify-content-between">
+                                <p>Moda Praia</p> 
+                                <i class="bi bi-arrow-right-short" style="color: black;"></i>
+                            </div>
+                        </a>                        
                     </div>
                 </div>
-                <div class="offcanvas offcanvas-end p-3" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="visualizarCarrinho" aria-labelledby="scrollSideBar">
+                <!-- para 531px  -->
+                <div class="meu-carrinho-sidebar offcanvas offcanvas-end p-2 w-75" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="visualizarCarrinho" aria-labelledby="scrollSideBar">
                     <div class="offcanvas-header d-flex">
                         <h3>Meu carrinho</h3>
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
                     </div>
-                    <div class="offcanvas-body">
-                        
+                    <div class="meu-carrinho-produtos offcanvas-body w-100">
+                        <ul class="p-0">
+                            <li class="produto-adicionado d-flex flex-wrap w-100 p-3 pt-0" style="border: 1px solid black;">
+                                <div class="controles d-flex justify-content-between w-100">
+                                    <input type="checkbox">
+                                    <button type="button" class="btn btn-transparent" >
+                                        <i class="bi bi-x-circle" style="height: 50px; color: black;"></i>
+                                    </button>
+                                </div>
+                                <div class="d-flex w-100">
+                                    <img src="https://cdn.vnda.com.br/900x/morangobrasil/2023/06/06/11_06_20_674_biquini-hype-41-f9f322d0626b42a51416799474375158-1024-1024.jpg?v=1686060380" alt="" style="height: auto; margin-right: 10px;" class=" w-50">
+                                    <div class="produto-info d-flex flex-column justify-content-between w-100">
+                                        <div class="produto-detalhes d-flex flex-column w-100">
+                                            <a href="#" class="w-100"><span style="text-overflow: ellipsis; word-wrap:break-word ;"><strong >Titulo alsdjaskfhakshf</strong></span></a>
+                                        </div>
+                                        <div class="produto-dados-compra w-100">
+                                            <div class="tamanho">
+                                                <label for="form-select">Tamanho</label>
+                                                <select class="form-select w-100" aria-label="Tamanho">
+                                                    <option value="1" selected>P</option>
+                                                    <option value="2">M</option>
+                                                    <option value="3">G</option>
+                                                </select>
+                                            </div>
+                                            <div class="quantidade d-flex flex-column w-100">
+                                                <label for="quantidade">Quantidade</label>
+                                                <div class="controles d-flex">
+                                                    <button type="button" id="btn-diminuir">
+                                                        <i class="bi bi-dash"></i>
+                                                    </button>
+                                                    <input type="text" value="1" id="quantidade" class="w-100">
+                                                    <button type="button" id="btn-adicionar">
+                                                        <i class="bi bi-plus"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>                                     
+                                    </div>
+                                </div>
+                                <!-- <div class="btn align-content-center">
+                                    <button type="button" class="btn btn-transparent" >
+                                        <i class="bi bi-x-circle" style="height: 50px; color: black;"></i>
+                                    </button>
+                                </div> -->
+                                <hr style="color: black;">
+                                <div class="total d-flex justify-content-between w-100">
+                                    <strong>Total</strong>
+                                    <strong>R$200,00</strong>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
+                    
                     <button class="btn btn-dark" type="button">Finalizar compra</button>
                 </div>
             </header>
@@ -165,15 +247,15 @@
 
 
                 <!-- criação de cards de produtos  -->
-                <div class="produtos container mt-5">
-                    <div class="card border-0" style="width: 20%">
+                <div class="produtos container mt-5" id="area-produtos">
+                    <div class="card border-0" style="width: 20%" id="produto">
                         <div class="card-body">
                             <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcRiTYB5I1_gRN8kRbhOg8cFWWSoLW44h4eghH9_4Plzri8CQaw0BQn06riIlFLxODa5S_pfCD-xTZfwRt1HWmckDen1qbwgvoNv7ltY8i_3XnpoKplrxzQnJ8_bO6iAIEacQlD_X5oX&usqp=CAc" alt="" class="card-img top">
                             <h5 class="card-title mt-2">Calça Wide</h5>
                             <p class="card-subtitle">Jeans</p>
                             <div class="buy-action" style="display: flex; justify-content: space-between;">
                                 <span class="mt-1"><strong>R$256,00</strong></span>
-                                <button type="button" class="border-1 rounded-1" aria-label="Carrinho de compras">
+                                <button type="button" class="border-1 rounded-1" aria-label="Carrinho de compras" id="btn-adicionar-carrinho">
                                     <i class="bi bi-cart-plus" style="color:black"></i>
                                 </button>
                             </div>
@@ -181,10 +263,43 @@
                     </div>
                 </div>
             </main>
-            <footer class="bg-black">
-
+            <footer>
+            <div class="bg-black p-4">
+                <div class="row justify-content-around">
+                    <div class="col-2">
+                        <p><strong>Sobre</strong></p>
+                        <a href="#"><p>Quem somos</p></a>
+                        <a href="#"><p>Time</p></a>
+                        <a href="#"><p>Carreira</p></a>
+                    </div>                     
+                    <div class="col-2">
+                        <p><strong>Ajuda</strong></p>
+                        <a href="#"><p>Atendimento</p></a>
+                        <a href="#"><p>Trocas e devoluções</p></a>
+                        <a href="#"><p>Politíca</p></a>
+                        <a href="#"><p>Contato</p></a>
+                    </div>
+                    <div class="col-2">
+                        <p><strong>Outros</strong></p>
+                        <a href="#"><p>Pagamento</p></a>
+                        <a href="#"><p>Bônus</p></a>
+                    </div>
+                    <div class="col-3 d-block">
+                        <p><strong>Receber promoções</strong> </p>
+                        <div class="cadastrar-email d-block d-lg-flex">
+                            <input type="email" name="email" id="email" placeholder="Insira seu email" class="p-1 mb-1 me-1"style="max-height: 3.5rem; max-width: 100%; border-radius: 8px;">
+                            <button type="button" aria-label="Cadastrar email" class="btn btn-light" style="max-height: 2.5rem;">Cadastrar</button>
+                        </div>
+                    </div>
+                </div>
+                <hr style="color:#fafafa">
+                <div class="redes-sociais d-flex justify-content-center">
+                    <a href="#"><i class="bi bi-instagram mx-5"></i></a>
+                    <a href="#"><i class="bi bi-facebook mx-5"></i></a>
+                    <a href="#"> <i class="bi bi-whatsapp mx-5"></i></a>
+                </div>
             </footer>
-            <script src="dist/index.js"></script>
+            <script src="script/index.js"></script>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         </body>
         </html>
